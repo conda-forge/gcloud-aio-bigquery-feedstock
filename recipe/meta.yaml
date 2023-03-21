@@ -1,5 +1,5 @@
 {% set name = "gcloud-aio-bigquery" %}
-{% set version = "6.2.0" %}
+{% set version = "6.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 05f389a16c9ba7cbdb445a76ee9e9168c0d047fbc38bfdbaed63527383b0ebe3
+  sha256: 4448e8a8ba0aefbb12e75c80a7a2de415e31307816815b698c7957af7e406477
 
 build:
   noarch: python

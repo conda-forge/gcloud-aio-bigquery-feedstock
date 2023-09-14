@@ -1,13 +1,13 @@
 {% set name = "gcloud-aio-bigquery" %}
-{% set version = "6.3.0" %}
+{% set version = "7.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 4448e8a8ba0aefbb12e75c80a7a2de415e31307816815b698c7957af7e406477
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gcloud_aio_bigquery-{{ version }}.tar.gz
+  sha256: 2cd1c7c9dcb68122ff6187f2b533941c86d954e5312d942c8107aac4d20ea2ec
 
 build:
   noarch: python
@@ -16,13 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.7,<4.0
-    - pip
+    - python >=3.8,<4.0
     - poetry-core >=1.0.0
+    - pip
   run:
-    - python >=3.7,<4.0
-    - gcloud-aio-auth >=3.1.0,<5.0.0
-    - setuptools >=66.0.0,<67.0.0
+    - python >=3.8,<4.0
+    - gcloud-aio-auth >=3.1.0,<6.0.0
 
 test:
   imports:

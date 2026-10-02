@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: gcloud-aio-bigquery
-  version: 7.1.0
+  version: 7.2.0
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/gcloud_aio_bigquery-${{ version }}.tar.gz
-  sha256: 4a3c775c2677c0588e9caeb2df40d81a54b31c174e562a527cb08e023c4408a3
+  sha256: df3bd8fc3aecaf3068ec074046f8e606bdd51032b22c95669c63b31eaf7575d7
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
 
@@ -25,7 +25,7 @@ requirements:
   run:
     - python >=${{ python_min }},<4.0
     - gcloud-aio-auth >=3.1.0,<6.0.0
-
+    - python-dateutil >=2.9.0,<3.0.0
 tests:
   - python:
       imports:

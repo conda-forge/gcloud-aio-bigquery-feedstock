@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: gcloud-aio-bigquery
-  version: 7.2.0
+  version: "7.3.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/gcloud_aio_bigquery-${{ version }}.tar.gz
-  sha256: df3bd8fc3aecaf3068ec074046f8e606bdd51032b22c95669c63b31eaf7575d7
+  sha256: 3aeda5d7992d1fb471736ca6cb3d75a2b287b3f531ecc566015c7ce9b8350b52
 
 build:
   number: 0
@@ -24,14 +24,16 @@ requirements:
     - poetry-core >=1.0.0
   run:
     - python >=${{ python_min }},<4.0
-    - gcloud-aio-auth >=3.1.0,<6.0.0
+    - gcloud-aio-auth >=3.4.4,<6.0.0
     - python-dateutil >=2.9.0,<3.0.0
 tests:
   - python:
       imports:
         - gcloud.aio.bigquery
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   summary: Python Client for Google Cloud BigQuery
